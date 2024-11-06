@@ -13,13 +13,7 @@ export default {
       "grey": "#19182b",
       "gradient1-start": "#ff6a3a",
       "gradient1-stop": "#ff527b"
-    },
-    extend: {
-      backgroundImage: {
-        "banner-mobile": "url('/images/illustration-sign-up-desktop.svg')",
-        "banner-desktop": "url('/images/illustration-sign-up-desktop.svg')"
-      },
-    },
+    }
   },
   plugins: [],
 }

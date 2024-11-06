@@ -8,8 +8,8 @@ export const Image = ({ className }) => {
 
   return (
     <section className={`h-full ${className}`}>
-      <div className={`bg-[url('${imagePath}')] h-full w-full`}></div>
-
+      {/* <div className={`bg-banner-${screenSize} h-full w-full`}></div> */}
+      <img src={imagePath} alt="" className="w-full h-full object-cover"/>
     </section>
   )
 }
