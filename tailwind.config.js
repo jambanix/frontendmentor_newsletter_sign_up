@@ -2,7 +2,7 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
     colors: {
@@ -14,7 +14,12 @@ export default {
       "gradient1-start": "#ff6a3a",
       "gradient1-stop": "#ff527b"
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "banner-mobile": "url('/images/illustration-sign-up-desktop.svg')",
+        "banner-desktop": "url('/images/illustration-sign-up-desktop.svg')"
+      },
+    },
   },
   plugins: [],
 }

@@ -1,4 +1,4 @@
-import iconList from "/src/assets/images/icon-list.svg";
+import iconList from "/images/icon-list.svg";
 
 export const ProductFeature = ({children}) => {
   return (

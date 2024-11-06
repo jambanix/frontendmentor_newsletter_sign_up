@@ -1,31 +1,57 @@
-import { useForm } from "react-hook-form"
+import { useForm } from "react-hook-form";
 import { ProductFeature } from "./ProductFeature";
 import { Button } from "./Button";
+import { Input } from "./Input";
 
 export const Form = ({ className, onSubmit }) => {
+  const emailRegex =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-  const {register, handleSubmit} = useForm();
-
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  
   return (
-    <section className={`${className} w-full h-full flex flex-col gap-6 flex-grow justify-center`}>
- 
+    <section
+      className={`${className} w-full h-full flex flex-col gap-6 justify-center p-4 items-center`}
+    >
+      <div className="flex flex-col gap-3">
         <h2 className="text-2xl md:text-4xl font-bold">Stay Updated!</h2>
-        <p className="text-dark-navy">Join 60,000+ product managers receiving monthly updates on:</p>
- 
-      <div className="flex-flex-col-gap-2">
-        <ProductFeature>Product discovery and building what matters</ProductFeature>
-        <ProductFeature>Measuring to ensure updates are a success</ProductFeature>
-        <ProductFeature>And much more!</ProductFeature>
-      </div>
-      <form noValidate onSubmit={onSubmit} className="flex flex-col flex-grow mt-6">
-        <div className="flex flex-col flex-grow">
-          <label htmlFor="email">Email address:</label>
-          <input name="email" type="email" {...register} />
+        <p className="text-dark-navy">
+          Join 60,000+ product managers receiving monthly updates on:
+        </p>
+
+        <div className="flex flex-col gap-4">
+          <ProductFeature>
+            Product discovery and building what matters
+          </ProductFeature>
+          <ProductFeature>
+            Measuring to ensure updates are a success
+          </ProductFeature>
+          <ProductFeature>And much more!</ProductFeature>
         </div>
-        <div className="w-full">
+      </div>
+
+      <form
+        noValidate
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col gap-4 mt-6 w-full"
+      >
+        <Input
+          error={errors.email}
+          name="email"
+          type="email"
+          className="w-full"
+          {...register("email", {
+            pattern: emailRegex, required: true
+          })}
+        />
+        <div className="">
           <Button type="submit">Subscribe to monthly newsletter</Button>
         </div>
       </form>
     </section>
-  )
-}
+  );
+};
