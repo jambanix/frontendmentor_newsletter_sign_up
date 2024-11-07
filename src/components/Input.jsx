@@ -12,7 +12,7 @@ export const Input = forwardRef(({onChange, error, name, ...props}, ref) => {
         <p className={`text-xs font-semibold text-vermillion ${errorMessageClassName}`}>Valid email required</p>
       </div>
       
-      <input ref={ref} name={name} onChange={onChange} className={`w-full border rounded-lg h-12 transition-opacity ${inputClassName}`}/>
+      <input ref={ref} name={name} onChange={onChange} className={` px-3 py-1 w-full outline-none border rounded-lg h-12 transition-opacity ${inputClassName}`}/>
     </div>
   )
 });

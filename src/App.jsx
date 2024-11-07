@@ -7,7 +7,12 @@ import { useState } from "react";
 function App() {
  
   const [success, setSuccess] = useState(false);
-  const handleSetDisplay = () => setSuccess(prev => !prev);
+  const [email, setEmail] = useState("");
+
+  const handleSetDisplay = (email) => {
+    setEmail(prev => email);
+    setSuccess(prev => !prev);
+  }
 
   return (
     <>
@@ -16,14 +21,14 @@ function App() {
           !success
           ?
           (
-            <Body className="grid-cols-1 grid-rows-[284px_1fr] md:grid-cols-2 md:grid-rows-1 w-full sm:w-[80%] max-w-[928px] md:p-4">
-              <Form className="md:col-start-1 md:row-span-1 row-start-2 p-2 md:p-6" onSubmit={handleSetDisplay}/>
+            <Body className="grid-cols-1 grid-rows-[284px_1fr] md:grid-cols-2 md:grid-rows-1 w-full max-w-[500px] md:max-w-[928px] md:p-4">
+              <Form className="md:col-start-1 md:row-span-1 row-start-2" onSubmit={handleSetDisplay}/>
               <Image className="md:col-start-2 md:row-span-1 row-start-1"/>
             </Body>
           )
           :
-            <Body>
-              <Success onClick={handleSetDisplay}/>
+            <Body className="w-full h-screen md:max-w-[504px] md:h-[520px]">
+              <Success className="w-full h-screen md:max-w-[504px] md:h-[520px]" onClick={handleSetDisplay}/>
             </Body>
         }
       </main>
