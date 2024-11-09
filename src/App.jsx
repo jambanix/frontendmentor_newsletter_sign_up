@@ -26,7 +26,7 @@ function App() {
           !success
           ?
           (
-            <Body className="grid-cols-1 grid-rows-[284px_1fr] md:grid-cols-2 md:grid-rows-1 w-full max-w-[500px] md:max-w-[928px] md:p-4">
+            <Body className="grid grid-cols-1 grid-rows-[284px_1fr] md:grid-cols-2 md:grid-rows-1 w-full max-w-[500px] md:max-w-[928px] gap-6 md:p-4">
               <Form className="md:col-start-1 md:row-span-1 row-start-2" onSubmit={handleConfirm}/>
               <Image className="md:col-start-2 md:row-span-1 row-start-1"/>
             </Body>
