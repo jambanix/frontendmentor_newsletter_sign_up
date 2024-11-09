@@ -18,7 +18,7 @@ export const Form = ({ className, onSubmit }) => {
       className={`${className} h-full flex flex-col gap-6 justify-center items-center px-6 py-10 md:p-8`}
     >
       <div className="flex flex-col gap-6">
-        <h2 className="text-4xl font-bold">Stay Updated!</h2>
+        <h2 className="text-4xl font-bold lg:text-[50px]">Stay Updated!</h2>
         <p className="text-dark-navy">
           Join 60,000+ product managers receiving monthly updates on:
         </p>
@@ -36,7 +36,7 @@ export const Form = ({ className, onSubmit }) => {
 
       <form
         noValidate
-        onSubmit={handleSubmit(() => onSubmit())}
+        onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-4 mt-6 w-full"
       >
         <Input
