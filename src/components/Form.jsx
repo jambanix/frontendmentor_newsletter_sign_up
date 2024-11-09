@@ -44,6 +44,7 @@ export const Form = ({ className, onSubmit }) => {
           name="email"
           type="email"
           className="w-full"
+          placeholder="email@company.com"
           {...register("email", {
             pattern: emailRegex, required: true
           })}

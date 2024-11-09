@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 
-export const Input = forwardRef(({onChange, error, name, ...props}, ref) => {
+export const Input = forwardRef(({onChange, error, name, placeholder, ...props}, ref) => {
 
   const inputClassName = error ? "bg-vermillion/30 border-vermillion" : "bg-white border-grey/20"
   const errorMessageClassName = error ? "visible opacity-100" : "invisible opacity-0"
@@ -12,7 +12,7 @@ export const Input = forwardRef(({onChange, error, name, ...props}, ref) => {
         <p className={`text-xs font-semibold text-vermillion ${errorMessageClassName}`}>Valid email required</p>
       </div>
       
-      <input ref={ref} name={name} onChange={onChange} className={` px-3 py-1 w-full outline-none border rounded-lg h-12 transition-opacity ${inputClassName}`}/>
+      <input placeholder={placeholder} ref={ref} name={name} onChange={onChange} className={` px-3 py-1 w-full outline-none border rounded-lg h-12 transition-opacity ${inputClassName}`}/>
     </div>
   )
 });

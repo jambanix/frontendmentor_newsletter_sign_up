@@ -21,7 +21,7 @@ function App() {
 
   return (
     <>
-      <main className="flex items-center justify-center min-h-screen w-full md:p-4 bg-dark-navy">
+      <main className="flex items-center justify-center min-h-screen w-full md:p-4 bg-pale-navy">
         {
           !success
           ?
